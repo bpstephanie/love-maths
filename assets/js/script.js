@@ -41,8 +41,22 @@ function checkAnswer() {
     
 }
 
+/**
+ * Get the operands (the numbers) and the operator (plus, minus etc)
+ * directly from the dom, and returns the correct answer.
+ */
 function calculateCorrectAnswer() {
-    
+    let operand1 = parseInt(docuement.getElementById('operand1').innerText);
+    let operand2 = parseInt(docuement.getElementById('operand2').innerText);
+    let operator = docuement.getElementById('operator').innerText;
+
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    } else {
+        alert(`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+
+    }
 }
 
 function incrementScore() {
